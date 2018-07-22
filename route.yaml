@@ -1,0 +1,9 @@
+kind: "Route"
+apiVersion: "v1"
+metadata:
+  name: "frontend"
+spec:
+  path: "/"
+  to:
+    kind: Service
+    name: frontend

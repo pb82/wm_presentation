@@ -12,7 +12,8 @@ spec:
         - name: "heynode"
           image: "pb82/heynode:latest"
           ports:
-            - containerPort: 8080
+            - name: "frontend-port"
+              containerPort: 8080
               protocol: "TCP"
   replicas: 1
   triggers:
