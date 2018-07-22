@@ -1,0 +1,22 @@
+kind: "DeploymentConfig"
+apiVersion: "v1"
+metadata:
+  name: "frontend"
+spec:
+  template:
+    metadata:
+      labels:
+        name: "frontend"
+    spec:
+      containers:
+        - name: "heynode"
+          image: "pb82/heynode:latest"
+          ports:
+            - containerPort: 8080
+              protocol: "TCP"
+  replicas: 1
+  triggers:
+    - type: "ConfigChange"
+  strategy:
+    type: "Rolling"
+  revisionHistoryLimit: 2
